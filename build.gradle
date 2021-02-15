@@ -1,0 +1,109 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group 'com.sp'
+version '5.0-WEBLOGIN'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+
+    def springVersion = "5.2.12.RELEASE"
+    //compile group: 'org.springframework', name: 'spring-webmvc', version: springVersion
+    compile group: 'org.springframework', name: 'spring-aop', version: springVersion
+    compile group: 'org.springframework', name: 'spring-beans', version: springVersion
+    compile group: 'org.springframework', name: 'spring-context', version: springVersion
+    compile group: 'org.springframework', name: 'spring-core', version: springVersion
+    compile group: 'org.springframework', name: 'spring-expression', version: springVersion
+    compile group: 'org.springframework', name: 'spring-jcl', version: springVersion
+    compile group: 'org.springframework', name: 'spring-jdbc', version: springVersion
+    compile group: 'org.springframework', name: 'spring-tx', version: springVersion
+    compile group: 'org.springframework', name: 'spring-web', version: springVersion
+    compile group: 'org.springframework', name: 'spring-webmvc', version: springVersion
+    compile group: 'org.springframework', name: 'spring-websocket', version: springVersion
+
+
+
+// https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+    providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+
+    providedCompile group: 'javax', name: 'javaee-api', version: '8.0.1'
+    providedCompile group: 'javax', name: 'javaee-web-api', version: '8.0.1'
+    providedCompile group: 'javax.mvc', name: 'javax.mvc-api', version: '1.0.0'
+    compile group: 'javax.xml.ws', name: 'jaxws-api', version: '2.3.1'
+
+    compile group: 'javax.jws', name: 'javax.jws-api', version: '1.1'
+
+// https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+//compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
+
+// https://mvnrepository.com/artifact/org.mybatis/mybatis-spring
+//compile group: 'org.mybatis', name: 'mybatis-spring', version: '2.1.6'
+
+// https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client
+    compile group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.7.1'
+
+
+//compileOnly('javax:javaee-api:8.0.1')
+//compileOnly('javax.mvc:javax.mvc-api:1.0.0')
+//compileOnly('javax.xml.ws:jaxws-api:2.3.1')
+//compileOnly('javax.jws:javax.jws-api:1.1')
+
+    def jacksonVersion = "2.12.0"
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: jacksonVersion
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: jacksonVersion
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: jacksonVersion
+
+//compile group: 'org.json', name: 'json', version: '20180813'
+//compile group: 'org.json', name: 'json', version: '20190722'
+    implementation 'org.json:json:20190722'
+
+//providedCompile group: 'org.projectlombok', name: 'lombok', version: '1.18.16'
+    compileOnly 'org.projectlombok:lombok:1.18.16'
+    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.16'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
+
+/*   war {
+       destinationDir new File("C:/Project")
+   }*/
+
+
+}
+
+
+
+// sourceSets{
+//     main{
+//         java{
+//             srcDir 'src/main/java'
+//             exclude '**/dk/**'
+// }
+// }
+// }
+//
+//ext {
+//    junitVersion = '5.7.0'
+//}
+//
+//sourceCompatibility = 1.8
+//targetCompatibility = 1.8
+//
+//dependencies {
+//    compileOnly('javax.mvc:javax.mvc-api:1.0.0')
+//    compileOnly('javax.servlet:javax.servlet-api:4.0.1')
+//
+//    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+//    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+//}
+//
+//test {
+//    useJUnitPlatform()
+//}
+
